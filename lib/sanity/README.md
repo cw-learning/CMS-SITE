@@ -1,0 +1,1 @@
+This folder will contain Sanity client and queries
