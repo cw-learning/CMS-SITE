@@ -1,0 +1,1 @@
+This folder will contain Sanity Studio project (if mono-repo)
