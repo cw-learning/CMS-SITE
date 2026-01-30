@@ -1,5 +1,7 @@
 import { client } from '@/lib/sanity/client'
 import { notFound } from 'next/navigation'
+import PageRenderer from '@/components/PageRenderer'
+import { SectionProps } from '@/components/PageRenderer.type'
 
 type PageRouteProps = {
   params: Promise<{ slug: string }>
@@ -8,7 +10,7 @@ type PageRouteProps = {
 type PageDoc = {
   title: string
   description?: string | null
-  sections?: any[] //newly added for testing
+  sections?: SectionProps[]
 }
 
 // const PAGE_BY_SLUG_QUERY =
@@ -43,7 +45,7 @@ export default async function Page({ params }: PageRouteProps) {
   let page: PageDoc | null
   try {
     page = await client.fetch<PageDoc | null>(PAGE_BY_SLUG_QUERY, { slug })
-    console.log('PAGE DATA:', page)
+    console.log('PAGE DATA:', page?.sections)
   } catch {
     notFound()
   }
@@ -52,9 +54,7 @@ export default async function Page({ params }: PageRouteProps) {
 
   return (
     <div>
-      <h1>{page.title}</h1>
-      <p>{page.description}</p>
-      <pre>{JSON.stringify(page.sections, null, 2)}</pre>
+      <PageRenderer sections={page.sections} />
     </div>
   )
 }
