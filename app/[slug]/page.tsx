@@ -29,6 +29,7 @@ const PAGE_BY_SLUG_QUERY = `
     image,
     alignment,
     features[]{
+    _key,
       title,
       description
     }
@@ -46,7 +47,6 @@ export default async function Page({ params }: PageRouteProps) {
   let page: PageDoc | null
   try {
     page = await client.fetch<PageDoc | null>(PAGE_BY_SLUG_QUERY, { slug })
-    console.log('PAGE DATA:', page?.sections)
   } catch {
     notFound()
   }

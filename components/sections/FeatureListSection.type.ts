@@ -1,4 +1,5 @@
 interface Feature {
+  _key: string;
   title: string;
   description: string;
 }
