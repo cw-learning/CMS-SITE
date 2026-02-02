@@ -10,7 +10,7 @@ export default function PageRenderer({ sections }: PageRendererProps) {
     <>
       {sections.map((section) => {
         const Component = sectionMap[section._type] as React.ComponentType<typeof section>
-        
+        console.log('Rendering section:', section._type, 'with key:', section._key)
         if (!Component) {
           console.warn(`No component found for type: ${section._type}`)
           return null

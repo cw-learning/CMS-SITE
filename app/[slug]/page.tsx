@@ -20,6 +20,7 @@ const PAGE_BY_SLUG_QUERY = `
   title,
   description,
   sections[]{
+    _key,
     _type,
     heading,
     subheading,
