@@ -8,7 +8,7 @@ export default function PageRenderer({ sections }: PageRendererProps) {
 
   return (
     <>
-      {sections.map((section, index) => {
+      {sections.map((section) => {
         const Component = sectionMap[section._type] as React.ComponentType<typeof section>
         
         if (!Component) {
@@ -16,7 +16,7 @@ export default function PageRenderer({ sections }: PageRendererProps) {
           return null
         }
         
-        return <Component key={`${section._type}-${index}`} {...section} />
+        return <Component key={section._key} {...section} />
       })}
     </>
   )
