@@ -1,7 +1,7 @@
 import { client } from '@/lib/sanity/client'
 import { notFound } from 'next/navigation'
-import PageRenderer from '@/components/PageRenderer'
-import { SectionProps } from '@/components/PageRenderer.type'
+import { PageRenderer } from '@/components/organisms'
+import type { SectionProps } from '@/components/organisms/PageRenderer'
 
 type PageRouteProps = {
   params: Promise<{ slug: string }>
