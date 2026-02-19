@@ -1,7 +1,7 @@
 import { client } from '@/lib/sanity/client'
 import { notFound } from 'next/navigation'
-import PageRenderer from '@/components/PageRenderer'
-import { SectionProps } from '@/components/PageRenderer.type'
+import { PageRenderer } from '@/components/organisms'
+import type { SectionProps } from '@/components/organisms/PageRenderer'
 
 type PageRouteProps = {
   params: Promise<{ slug: string }>
@@ -54,7 +54,7 @@ export default async function Page({ params }: PageRouteProps) {
   if (!page) notFound()
 
   return (
-    <div>
+    <div className="bg-linear-to-br from-gray-50 via-gray-500 to-gray-950">
       <PageRenderer sections={page.sections} />
     </div>
   )
