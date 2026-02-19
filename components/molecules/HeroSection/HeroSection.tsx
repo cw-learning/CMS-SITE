@@ -10,7 +10,7 @@ export default function HeroSection({
   const imageUrl = backgroundImage ? urlFor(backgroundImage).url() : null
   
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
       {imageUrl && (
         <>
           <ResponsiveImage
@@ -30,7 +30,7 @@ export default function HeroSection({
         <Heading level="h1" className="text-white drop-shadow-2xl mb-6 animate-fade-in">
           {heading}
         </Heading>
-        <Text variant="subheading" className="text-gray-100 drop-shadow-lg animate-fade-in-delay">
+        <Text variant="subheading" className="text-white drop-shadow-lg animate-fade-in-delay">
           {subheading}
         </Text>
       </header>

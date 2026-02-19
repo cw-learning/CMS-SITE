@@ -4,7 +4,6 @@ export default function Container({
   children,
   maxWidth = 'default',
   className = '',
-  as: Tag = 'div',
 }: ContainerProps) {
   const maxWidthStyles = {
     small: 'max-w-4xl',
@@ -14,8 +13,8 @@ export default function Container({
   }
   
   return (
-    <Tag className={`mx-auto ${maxWidthStyles[maxWidth]} ${className}`}>
+    <div className={`mx-auto ${maxWidthStyles[maxWidth]} ${className}`}>
       {children}
-    </Tag>
+    </div>
   )
 }
