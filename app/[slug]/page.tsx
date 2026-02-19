@@ -54,7 +54,7 @@ export default async function Page({ params }: PageRouteProps) {
   if (!page) notFound()
 
   return (
-    <div>
+    <div className="bg-linear-to-br from-gray-50 via-gray-500 to-gray-950">
       <PageRenderer sections={page.sections} />
     </div>
   )

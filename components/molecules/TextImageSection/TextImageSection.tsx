@@ -11,9 +11,9 @@ export default function TextImageSection({
   const imageUrl = image ? urlFor(image).url() : null
   
   return (
-      <Container className={`p-10 
+      <section className={`p-10 
       flex flex-col md:flex-row gap-10 items-center justify-center ${isRight ? 'md:flex-row-reverse' : ''} 
-      bg-white`} maxWidth='full'>
+      bg-white`}>
 
             <Text 
               variant="subheading" 
@@ -32,6 +32,6 @@ export default function TextImageSection({
                 hover:scale-110 hover:shadow-2xl hover:rotate-1"
               />
             )}
-      </Container>
+      </section>
   )
 }
