@@ -1,5 +1,5 @@
 import { urlFor } from '@/sanity/lib/image'
-import { Text, Container, ResponsiveImage } from '@/components/atoms'
+import { Text, ResponsiveImage } from '@/components/atoms'
 import type { TextImageSectionProps } from './TextImageSection.types'
 
 export default function TextImageSection({
